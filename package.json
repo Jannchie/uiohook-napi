@@ -1,6 +1,6 @@
 {
-  "name": "uiohook-napi",
-  "version": "1.2.0",
+  "name": "@jannchie/uiohook-napi",
+  "version": "1.0.0",
   "author": {
     "name": "Alexander Drozdov"
   },
@@ -37,7 +37,7 @@
     "prebuilds"
   ],
   "devDependencies": {
-    "@types/node": "16.x.x",
+    "@types/node": "16.11.41",
     "prebuildify": "5.x.x",
     "ts-node": "10.x.x",
     "typescript": "4.x.x"
