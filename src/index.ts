@@ -1,12 +1,5 @@
 import { EventEmitter } from 'events'
-import { join } from 'path'
-import { existsSync } from "fs";
-let path = join(__dirname, "..");
-if (existsSync("node_modules/@jannchie/uiohook-napi")) {
-  path = "node_modules/@jannchie/uiohook-napi";
-}
-const lib: AddonExports = require("node-gyp-build")(path);
-
+const lib: AddonExports = require("../prebuilds/win32-x64/node.napi.node");
 interface AddonExports {
   start(cb: (e: any) => void): void
   stop(): void
