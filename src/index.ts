@@ -1,5 +1,12 @@
 import { EventEmitter } from 'events'
-const lib: AddonExports = require("../prebuilds/win32-x64/node.napi.node");
+import { arch, platform } from "os";
+let lib: AddonExports;
+if (arch() === "x64" && platform() === "win32") {
+  lib = require("../prebuilds/win32-x64/node.napi.node");
+} else {
+  throw new Error(`Not support arch(${arch()}) or platform${[platform()]}!`);
+}
+
 interface AddonExports {
   start(cb: (e: any) => void): void
   stop(): void
